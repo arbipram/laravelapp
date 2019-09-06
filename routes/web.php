@@ -24,4 +24,9 @@ Route::post('/input-guestbook/store','GuestbookController@store');
 
 Route::middleware(['Logged'])->group(function() {
 	Route::get('/admin/guestbook','Admin\GuestbookController@index');
+	Route::get('/admin/guestbook/create','Admin\GuestbookController@create');
+	Route::post('/admin/guestbook/store','Admin\GuestbookController@store');
+	Route::get('/admin/guestbook/edit/{id}','Admin\GuestbookController@edit');
+	Route::post('/admin/guestbook/update/{id}','Admin\GuestbookController@update');
+	Route::get('/admin/guestbook/delete/{id}','Admin\GuestbookController@delete');
 });
